@@ -4,50 +4,75 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width"> 
     <title>Garrett County GIS Webmaps</title>
-</head>
-<body style="margin:0;padding:0; background:#fff; font-family: Arial, Verdana, Sans-Serif;"> 
+
     <!-- Caption Style -->
     <style> 
-        .captionOrange, .captionBlack
-        {
-            color: #fff;
-            font-size: 20px;
-            line-height: 30px;
-            text-align: center;
-            border-radius: 4px;
-        }
-        .captionOrange
-        {
-            background: #EB5100;
-            background-color: rgba(235, 81, 0, 0.6);
-        }
-        #gc_banner 
-        {
-          border: 2px solid green;
-          margin-bottom: 1em;
-        }
-        .captionBlack
-        {
-        	font-size:16px;
-            background: #000;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        a.captionOrange, A.captionOrange:active, A.captionOrange:visited
-        {
-        	color: #ffffff;
-        	text-decoration: none;
-        }
-        a.captionOrange:hover
-        {
-            color: #eb5100;
-            text-decoration: underline;
-            background-color: #eeeeee;
-            background-color: rgba(238, 238, 238, 0.7);
-        }
-        .bricon
-        {
-            background: url(jquery-slider-master/img/browser-icons.png);
-        }
+      body 
+      {
+         margin:0;
+         padding:0;
+         background:#fff; 
+         font-family: Arial, Verdana, Sans-Serif;
+      }
+      div#nav 
+      {
+        font-size: 1.2em;
+        color: silver;
+        padding-bottom: 0.4em;
+        text-align: center;
+      }
+      div#mainContent
+      {
+        border-top: 3px solid green;
+        border-bottom: 3px solid green;
+        
+      }
+      div#slider1_container
+      {
+        margin-bottom: 1em;
+        width: 900px;
+        border: 2px solid green;
+      }
+      .captionOrange, .captionBlack
+      {
+          color: #fff;
+          font-size: 20px;
+          line-height: 30px;
+          text-align: center;
+          border-radius: 4px;
+      }
+      .captionOrange
+      {
+          background: #EB5100;
+          background-color: rgba(235, 81, 0, 0.6);
+      }
+      #gc_banner 
+      {
+        border: 2px solid green;
+        margin-bottom: 1em;
+      }
+      .captionBlack
+      {
+        font-size:16px;
+          background: #000;
+          background-color: rgba(0, 0, 0, 0.4);
+      }
+      a.captionOrange, A.captionOrange:active, A.captionOrange:visited
+      {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      a.captionOrange:hover
+      {
+          color: #eb5100;
+          text-decoration: underline;
+          background-color: #eeeeee;
+          background-color: rgba(238, 238, 238, 0.7);
+      }
+      .bricon
+      {
+          background: url(jquery-slider-master/img/browser-icons.png);
+      }
     </style>
     <!-- it works the same with all jquery version from 1.x to 2.x -->
     <script type="text/javascript" src="jquery-slider-master/js/jquery-1.9.1.min.js"></script>
@@ -229,10 +254,19 @@
             //responsive code end
         });
     </script>
+</head>
+<body>    
     <div id="mainContent">
       <div id="gc_banner" style="position: relative; align-content: center; text-align:center; margin-right: auto; margin-left: auto; margin-top: 20px; width: 900px; height:105px; float: center">
         <h1>Garrett County Web Maps <img src="images\yourLOGO.gif" width="64" height="48" ></h1>
       </div>
+      <div id="nav">
+        | <a href="http://www.garrettcounty.org">Garrett County</a> | 
+        <a href="http://gis.garrettcounty.org/arcgis/pz_map.php">Planning &amp; Zoning Map</a> | 
+        <a href="http://gis.garrettcounty.org/arcgis/measure.php">Measurements</a> | 
+        <a href="http://gis.garrettcounty.org/arcgis/FEMA_map.php">Flood Hazard Map</a> | 
+        <a href="http://gis.garrettcounty.org/help.html">Help</a> | 
+      </div><!-- nav -->
       <!-- Jssor Slider Begin -->
       <!-- You can move inline styles to css file or css block. -->     
       <!-- // THIS NEXT DIV WAS w980px h380px -->
@@ -257,7 +291,7 @@
    
           <!-- Slides Container --> 
           <!-- THIS NEXT DIV MODIFIED BY ME; WAS w980px and h380px -->
-          <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 900px; height: 400px;
+          <div id="slides" u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 900px; height: 400px;
               overflow: hidden;">
               <div id="slide1">
                   <!--<img u="image" src="jquery-slider-master/img/home/01.jpg" />-->
