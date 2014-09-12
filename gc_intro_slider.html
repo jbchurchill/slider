@@ -21,6 +21,11 @@
             background: #EB5100;
             background-color: rgba(235, 81, 0, 0.6);
         }
+        #gc_banner 
+        {
+          border: 2px solid green;
+          margin-bottom: 1em;
+        }
         .captionBlack
         {
         	font-size:16px;
@@ -224,304 +229,307 @@
             //responsive code end
         });
     </script>
+    <div id="mainContent">
+      <div id="gc_banner" style="position: relative; align-content: center; text-align:center; margin-right: auto; margin-left: auto; margin-top: 20px; width: 900px; height:105px; float: center">
+        <h1>Garrett County Web Maps <img src="images\yourLOGO.gif" width="64" height="48" ></h1>
+      </div>
+      <!-- Jssor Slider Begin -->
+      <!-- You can move inline styles to css file or css block. -->     
+      <!-- // THIS NEXT DIV WAS w980px h380px -->
+      <div id="slider1_container" style="position: relative; width: 900px;
+          height: 400px; overflow: hidden; margin-left:auto; margin-right:auto; float:center;">
+          <style>
+              /* this line can be removed, but it really helps in case of css conflicts in your page */
+              .slider1 div { position: relative; margin: 0px; padding: 0px; }
+          </style>
+   
+          <!-- Loading Screen --> 
+          <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+              <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
 
-    <!-- Jssor Slider Begin -->
-    <!-- You can move inline styles to css file or css block. --> 
-    <div id="gc_banner" style="position: relative; align-content: center; text-align:center; margin-right: auto; margin-left: auto; margin-top: 20px; width: 900px; height:105px; float: center"><h1>Garrett County Web Maps</h1></div>
-    <!-- // THIS NEXT DIV WAS w980px h380px -->
-    <div id="slider1_container" style="position: relative; width: 900px;
-        height: 400px; overflow: hidden; margin-left:auto; margin-right:auto; float:center;">
-        <style>
-            /* this line can be removed, but it really helps in case of css conflicts in your page */
-            .slider1 div { position: relative; margin: 0px; padding: 0px; }
-        </style>
- 
-        <!-- Loading Screen --> 
-        <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+                  background-color: #000; top: 0px; left: 0px;width: 100%; height:100%;"> 
+              </div> 
+              <div style="position: absolute; display: block; background: url(jquery-slider-master/img/loading.gif) no-repeat center center;
 
-                background-color: #000; top: 0px; left: 0px;width: 100%; height:100%;"> 
-            </div> 
-            <div style="position: absolute; display: block; background: url(jquery-slider-master/img/loading.gif) no-repeat center center;
+                  top: 0px; left: 0px;width: 100%;height:100%;">
+              </div> 
+          </div> 
+   
+          <!-- Slides Container --> 
+          <!-- THIS NEXT DIV MODIFIED BY ME; WAS w980px and h380px -->
+          <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 900px; height: 400px;
+              overflow: hidden;">
+              <div id="slide1">
+                  <!--<img u="image" src="jquery-slider-master/img/home/01.jpg" />-->
+                  <img u="image" src="images/gc_carousel-01.jpg" alt="Planning and Zoning Map screenshot">
+                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionOrange" style="position:absolute; left:295px; top: 84px; width:290px; height:28px;">
+                      <img src="images/Arrow02.png">  Search for an Address
+                  </div>                
+                  <div u=caption t="CLIP|LR" du="100" class="captionOrange"  style="position:absolute; left:60px; top: 180px; width:600px; height:30px;"> 
+                  Click to identify Address points, parcels, zoning, and other layers.
+                  </div>
 
-                top: 0px; left: 0px;width: 100%;height:100%;">
-            </div> 
-        </div> 
- 
-        <!-- Slides Container --> 
-        <!-- THIS NEXT DIV MODIFIED BY ME; WAS w980px and h380px -->
-        <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 900px; height: 400px;
-            overflow: hidden;">
-            <div id="slide1">
-                <!--<img u="image" src="jquery-slider-master/img/home/01.jpg" />-->
-                <img u="image" src="images/gc_carousel-01.jpg" alt="Planning and Zoning Map screenshot">
-                <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionOrange" style="position:absolute; left:295px; top: 84px; width:290px; height:28px;">
-                    <img src="images/Arrow02.png">  Search for an Address
-                </div>                
-                <div u=caption t="CLIP|LR" du="100" class="captionOrange"  style="position:absolute; left:60px; top: 180px; width:600px; height:30px;"> 
-                Click to identify Address points, parcels, zoning, and other layers.
-                </div>
+                  <!--<div u="caption" t="ZMF|10" t2="B" d=-1300 style="position:absolute;left:420px;top:280px;width:90px;height:40px;font-size:36px;color:#fff;line-height:40px;">390+</div>-->
+                  
+                  <a class="captionOrange" u="caption" t="CLIP|L" d=-300 href="http://gis.garrettcounty.org/arcgis/pz_map.php" style="position:absolute;left:260px;top:270px;width:560px;height:40px;font-size:26px;color:#fff;line-height:40px; text-decoration: underline;">Click Here For the Planning and Zoning Map</a>
+              </div>
+              <div id="slide2"> 
+                  <img u="image" src="images/gc_carousel-02.jpg" alt="FEMA Map screenshot">
+                  <a class="captionOrange" href="http://gis.garrettcounty.org/arcgis/FEMA_map.php" style="position: absolute; text-decoration: underline; top: 240px; left: 500px; width: 300px; height: 30px;">Click Here for the FEMA Map</a>
+                  <div u=caption t="CLIP|LR" t2="B" du="2000" class="captionOrange"  style="position:absolute; left:20px; top: 300px; width:790px; height:30px;">
+                  Use the Flood Hazard Map to determine inclusion in the 100&#045;year Flood Hazard Zone.
+                  </div>
+                  <!--<div u="caption" t="FADE" t2="B" d=-450 class=captionBlack style="position: absolute; left:700px;top:120px;width:200px;height:90px;">
+                          No-JQuery<br />
+                          Independent<br />
+                          Javascript Code
+                  </div>-->
+                  <!--<div u="caption" t="T|IB" t2="R" d=-600 class=captionOrange style="position: absolute; top: 90px; left: 720px; width: 160px;
+                      height: 90px;  line-height: 90px;">
+                      Compress
+                  </div>-->
+                  <div u="caption" t="MCLIP|T" t2="T" d=-450 style="position:absolute;left:725px;top:80px;width:200px;height:30px;font-size:18px;color:#ff6600;line-height:30px;text-align:left;">Click to Identify ...</div>
+                  <div u="caption" t="MCLIP|R" d=-300 style="position:absolute;left:725px;top:110px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;">Addresses</div>
+                  <div u="caption" t="MCLIP|R" d=-300 style="position:absolute;left:725px;top:140px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;">Parcels</div>
+                  <div u="caption" t="MCLIP|R" d=-300 style="position:absolute;left:725px;top:170px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;">Flood Hazard Areas</div>
+              </div>
+              <div> 
+                  <img u="image" src="images/gc_carousel-03.jpg" alt="Measurement Map screenshot">
+                  <a class="captionOrange" href="http://gis.garrettcounty.org/arcgis/measure.php" style="position: absolute; top: 325px; right: 30px; width: 400px; text-decoration: underline;">Click Here for the Measurement Map</a>
+                  <!--
+                  <div u=caption t="T" t2=NO style="position: absolute; left: 20px; top:30px; width:600px; height:90px; color: #fff; line-height: 30px; text-align: center;"> 
+                      Jssor Slider is touch swipe image slideshow with 360+ javascript slideshow effects.<br />
+                      When touch Jssor Slider,<br />
+                      it will freeze and then move to the direction that finger swipes to.
+                  </div>
+                  <div u=caption t="L" d=-750 class="captionOrange"  style="position:absolute; left:20px; top: 300px; width:130px; height:30px;"> 
+                  Jssor slider
+                  </div>
+                  <div u=caption t="CLIP|L" t2=B d=-450 class="captionBlack"  style="position:absolute; left:160px; top: 300px; width:30px; height:30px;"> 
+                  is
+                  </div>
+                  <div u=caption t="DDG|TR" t2="TORTUOUS|VB" d=-750 class="captionOrange"  style="position:absolute; left:200px; top: 300px; width:300px; height:30px;"> 
+                  most scalable photo slideshow
+                  </div>
+                  <div u=caption t="RTT|10" d=-450 class="captionBlack"  style="position:absolute; left:430px; top: 240px; width:30px; height:30px;"> 
+                  for
+                  </div>
+                  -->
+                  <div u=caption t="T" d=-450 class="captionOrange"  style="position:absolute; left:362px; top: 52px; width:80px; height:30px;">
+                    click1
+                  </div>                
+                  <div u=caption t="TORTUOUS|VB" d=-750 class="captionOrange"  style="position:absolute; left:465px; top: 220px; width:80px; height:30px;"> 
+                    click2
+                  </div>
+                  <div u=caption t="FLTTR|R" t2="B" d=-600 class="captionOrange"  style="position:absolute; left:300px; top: 320px; width:80px; height:30px;"> 
+                    click3
+                  </div>
+                  <div u=caption t="ATTACK|BR" d=-600 class="captionOrange"  style="position:absolute; left:120px; top: 230px; width:80px; height:30px;"> 
+                    click4
+                  </div>
+                  <div u=caption t="T" d=-450 class="captionOrange"  style="position:absolute; left:147px; top: 70px; width:145px; height:30px;">
+                    Double&#045;click
+                  </div>
+                  <div u="caption" t="FLTTRWN|LT" d=-900 style="position:absolute;left:500px;top:100px;width:130px;height:30px;font-size:28px;color:#ff6600;line-height:30px;">Measure Area</div>
+                  <!--<div u="caption" t="RTTS|R" d=-900 style="position:absolute;left:760px;top:120px;width:130px;height:30px;font-size:28px;color:#fff;line-height:30px;">web page</div>
+                  <div u="caption" t="R|IB" t2=R d=-900 style="position:absolute;left:860px;top:250px;width:60px;height:30px;font-size:28px;color:#fff;line-height:30px;">text</div>
+                  -->
+              </div>
+              <div id="slide4">
+                  <img u="image" src="images/gc_carousel-02.jpg" alt="Sensitive Areas Map">
+                  <div u=caption t="RTTS|T" d=-300 t2="B" class=captionOrange style="position:absolute; left:20px; top: 330px; width:400px; height:30px;"> 
+                  SENSITIVE AREAS MAP COMING SOON
+                  </div>
+                  <!--
+                  <div u=caption t="T|IB" t2="T" d=-300 class="captionOrange"  style="position:absolute; left:20px; top: 100px; width:130px; height:30px;"> 
+                  All browsers
+                  </div>
+                  <div u=caption t="T|IB" t2=L d=-900 class="captionBlack"  style="position:absolute; left:60px; top: 170px; width:100px; height:30px;"> 
+                  supported
+                  </div>
+                  -->
+                  <div u="caption" t="WV|B" t2="T" d=-600 class=bricon style="position:absolute; top:50px; left: 220px; width:30px; height:30px; background-position: 0px 0px;"></div>
+                  <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:100px; left: 220px; width:30px; height:30px; background-position: -30px 0px;"></div>
+                  <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:150px; left: 220px; width:30px; height:30px; background-position: -60px 0px;"></div>
+                  <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:200px; left: 220px; width:30px; height:30px; background-position: -90px 0px;"></div>
+                  <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:250px; left: 220px; width:30px; height:30px; background-position: -120px 0px;"></div>
+                  <div u="caption" t="LISTH|R" t2="CLIP|TB" d=-600 class=captionOrange style="position: absolute; top: 40px; left: 280px; width: 180px;
+                      height: 250px; text-align: left; line-height: 50px;">
+                          &nbsp; Chrome&nbsp; &nbsp; &nbsp; 3+<br />
+                          &nbsp; Firerfox&nbsp; &nbsp; &nbsp; 2+<br />
+                          &nbsp; IE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6+<br />
+                          &nbsp; Safari&nbsp; &nbsp; &nbsp; &nbsp; 3.1+<br />
+                          &nbsp; Opera&nbsp; &nbsp; &nbsp; &nbsp;10+
+                  </div>
+                  <div u=caption t="TR" t2="T" d=-900 class="captionOrange"  style="position:absolute; left:700px; top: 40px; width:130px; height:30px;"> 
+                  All devices
+                  </div>
+                  <div u=caption t="R" t2=R d=-900 class="captionBlack"  style="position:absolute; left:780px; top: 55px; width:100px; height:30px;"> 
+                  supported
+                  </div>
+                  <!--
+                  <div u="caption" t="T|IB" d=-900 style="position:absolute;left:525px;top:90px;width:220px;height:30px;font-size:28px;color:#fff;line-height:30px;">Windows Phone</div>
+                  <div u="caption" t="T|IB" t2="ZMF|10" d=-900 style="position:absolute;left:560px;top:160px;width:120px;height:30px;font-size:28px;color:#fff;line-height:30px;">Android</div>
+                  <div u="caption" t="T|IB" t2=R d=-900 style="position:absolute;left:760px;top:140px;width:60px;height:30px;font-size:28px;color:#fff;line-height:30px;">iOS</div>
+                  <img u="caption" t="T|IB" t2=B d=-900 src="jquery-slider-master/img/home/moc-iphone.png" style="position:absolute;left:600px;top:230px;width:120px;height:80px;" />
+                  <img u="caption" t="RTTL|BR" d=-450 src="jquery-slider-master/img/home/moc-ipad.png" style="position:absolute;left:750px;top:220px;width:77px;height:100px;" />
+                  -->
+              </div>
 
-                <!--<div u="caption" t="ZMF|10" t2="B" d=-1300 style="position:absolute;left:420px;top:280px;width:90px;height:40px;font-size:36px;color:#fff;line-height:40px;">390+</div>-->
-                
-                <a class="captionOrange" u="caption" t="CLIP|L" d=-300 href="http://gis.garrettcounty.org/arcgis/pz_map.php" style="position:absolute;left:260px;top:270px;width:560px;height:40px;font-size:26px;color:#fff;line-height:40px; text-decoration: underline;">Click Here For the Planning and Zoning Map</a>
-            </div>
-            <div id="slide2"> 
-                <img u="image" src="images/gc_carousel-02.jpg" alt="FEMA Map screenshot">
-                <a class="captionOrange" href="http://gis.garrettcounty.org/arcgis/FEMA_map.php" style="position: absolute; text-decoration: underline; top: 240px; left: 500px; width: 300px; height: 30px;">Click Here for the FEMA Map</a>
-                <div u=caption t="CLIP|LR" t2="B" du="2000" class="captionOrange"  style="position:absolute; left:20px; top: 300px; width:790px; height:30px;">
-                Use the Flood Hazard Map to determine inclusion in the 100&#045;year Flood Hazard Zone.
-                </div>
-                <!--<div u="caption" t="FADE" t2="B" d=-450 class=captionBlack style="position: absolute; left:700px;top:120px;width:200px;height:90px;">
-                        No-JQuery<br />
-                        Independent<br />
-                        Javascript Code
-                </div>-->
-                <!--<div u="caption" t="T|IB" t2="R" d=-600 class=captionOrange style="position: absolute; top: 90px; left: 720px; width: 160px;
-                    height: 90px;  line-height: 90px;">
-                    Compress
-                </div>-->
-                <div u="caption" t="MCLIP|T" t2="T" d=-450 style="position:absolute;left:725px;top:80px;width:200px;height:30px;font-size:18px;color:#ff6600;line-height:30px;text-align:left;">Click to Identify ...</div>
-                <div u="caption" t="MCLIP|R" d=-300 style="position:absolute;left:725px;top:110px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;">Addresses</div>
-                <div u="caption" t="MCLIP|R" d=-300 style="position:absolute;left:725px;top:140px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;">Parcels</div>
-                <div u="caption" t="MCLIP|R" d=-300 style="position:absolute;left:725px;top:170px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;">Flood Hazard Areas</div>
-            </div>
-            <div> 
-                <img u="image" src="images/gc_carousel-03.jpg" alt="Measurement Map screenshot">
-                <a class="captionOrange" href="http://gis.garrettcounty.org/arcgis/measure.php" style="position: absolute; top: 325px; right: 30px; width: 400px; text-decoration: underline;">Click Here for the Measurement Map</a>
-                <!--
-                <div u=caption t="T" t2=NO style="position: absolute; left: 20px; top:30px; width:600px; height:90px; color: #fff; line-height: 30px; text-align: center;"> 
-                    Jssor Slider is touch swipe image slideshow with 360+ javascript slideshow effects.<br />
-                    When touch Jssor Slider,<br />
-                    it will freeze and then move to the direction that finger swipes to.
-                </div>
-                <div u=caption t="L" d=-750 class="captionOrange"  style="position:absolute; left:20px; top: 300px; width:130px; height:30px;"> 
-                Jssor slider
-                </div>
-                <div u=caption t="CLIP|L" t2=B d=-450 class="captionBlack"  style="position:absolute; left:160px; top: 300px; width:30px; height:30px;"> 
-                is
-                </div>
-                <div u=caption t="DDG|TR" t2="TORTUOUS|VB" d=-750 class="captionOrange"  style="position:absolute; left:200px; top: 300px; width:300px; height:30px;"> 
-                most scalable photo slideshow
-                </div>
-                <div u=caption t="RTT|10" d=-450 class="captionBlack"  style="position:absolute; left:430px; top: 240px; width:30px; height:30px;"> 
-                for
-                </div>
-                -->
-                <div u=caption t="T" d=-450 class="captionOrange"  style="position:absolute; left:362px; top: 52px; width:80px; height:30px;">
-                  click1
-                </div>                
-                <div u=caption t="TORTUOUS|VB" d=-750 class="captionOrange"  style="position:absolute; left:465px; top: 220px; width:80px; height:30px;"> 
-                  click2
-                </div>
-                <div u=caption t="FLTTR|R" t2="B" d=-600 class="captionOrange"  style="position:absolute; left:300px; top: 320px; width:80px; height:30px;"> 
-                  click3
-                </div>
-                <div u=caption t="ATTACK|BR" d=-600 class="captionOrange"  style="position:absolute; left:120px; top: 230px; width:80px; height:30px;"> 
-                  click4
-                </div>
-                <div u=caption t="T" d=-450 class="captionOrange"  style="position:absolute; left:147px; top: 70px; width:145px; height:30px;">
-                  Double&#045;click
-                </div>
-                <div u="caption" t="FLTTRWN|LT" d=-900 style="position:absolute;left:500px;top:100px;width:130px;height:30px;font-size:28px;color:#ff6600;line-height:30px;">Measure Area</div>
-                <!--<div u="caption" t="RTTS|R" d=-900 style="position:absolute;left:760px;top:120px;width:130px;height:30px;font-size:28px;color:#fff;line-height:30px;">web page</div>
-                <div u="caption" t="R|IB" t2=R d=-900 style="position:absolute;left:860px;top:250px;width:60px;height:30px;font-size:28px;color:#fff;line-height:30px;">text</div>
-                -->
-            </div>
-            <div id="slide4">
-                <img u="image" src="images/gc_carousel-02.jpg" alt="Sensitive Areas Map">
-                <div u=caption t="RTTS|T" d=-300 t2="B" class=captionOrange style="position:absolute; left:20px; top: 330px; width:400px; height:30px;"> 
-                SENSITIVE AREAS MAP COMING SOON
-                </div>
-                <!--
-                <div u=caption t="T|IB" t2="T" d=-300 class="captionOrange"  style="position:absolute; left:20px; top: 100px; width:130px; height:30px;"> 
-                All browsers
-                </div>
-                <div u=caption t="T|IB" t2=L d=-900 class="captionBlack"  style="position:absolute; left:60px; top: 170px; width:100px; height:30px;"> 
-                supported
-                </div>
-                -->
-                <div u="caption" t="WV|B" t2="T" d=-600 class=bricon style="position:absolute; top:50px; left: 220px; width:30px; height:30px; background-position: 0px 0px;"></div>
-                <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:100px; left: 220px; width:30px; height:30px; background-position: -30px 0px;"></div>
-                <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:150px; left: 220px; width:30px; height:30px; background-position: -60px 0px;"></div>
-                <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:200px; left: 220px; width:30px; height:30px; background-position: -90px 0px;"></div>
-                <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:250px; left: 220px; width:30px; height:30px; background-position: -120px 0px;"></div>
-                <div u="caption" t="LISTH|R" t2="CLIP|TB" d=-600 class=captionOrange style="position: absolute; top: 40px; left: 280px; width: 180px;
-                    height: 250px; text-align: left; line-height: 50px;">
-                        &nbsp; Chrome&nbsp; &nbsp; &nbsp; 3+<br />
-                        &nbsp; Firerfox&nbsp; &nbsp; &nbsp; 2+<br />
-                        &nbsp; IE&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 6+<br />
-                        &nbsp; Safari&nbsp; &nbsp; &nbsp; &nbsp; 3.1+<br />
-                        &nbsp; Opera&nbsp; &nbsp; &nbsp; &nbsp;10+
-                </div>
-                <div u=caption t="TR" t2="T" d=-900 class="captionOrange"  style="position:absolute; left:700px; top: 40px; width:130px; height:30px;"> 
-                All devices
-                </div>
-                <div u=caption t="R" t2=R d=-900 class="captionBlack"  style="position:absolute; left:780px; top: 55px; width:100px; height:30px;"> 
-                supported
-                </div>
-                <!--
-                <div u="caption" t="T|IB" d=-900 style="position:absolute;left:525px;top:90px;width:220px;height:30px;font-size:28px;color:#fff;line-height:30px;">Windows Phone</div>
-                <div u="caption" t="T|IB" t2="ZMF|10" d=-900 style="position:absolute;left:560px;top:160px;width:120px;height:30px;font-size:28px;color:#fff;line-height:30px;">Android</div>
-                <div u="caption" t="T|IB" t2=R d=-900 style="position:absolute;left:760px;top:140px;width:60px;height:30px;font-size:28px;color:#fff;line-height:30px;">iOS</div>
-                <img u="caption" t="T|IB" t2=B d=-900 src="jquery-slider-master/img/home/moc-iphone.png" style="position:absolute;left:600px;top:230px;width:120px;height:80px;" />
-                <img u="caption" t="RTTL|BR" d=-450 src="jquery-slider-master/img/home/moc-ipad.png" style="position:absolute;left:750px;top:220px;width:77px;height:100px;" />
-                -->
-            </div>
+              <!-- Example to add fixed static share buttons in slider BEGIN -->
+              <!-- Remove it if no need -->
+              <!-- Share Button Styles -->
+              <style>
+                  .share-icon {
+                      display: inline-block;
+                      float: left;
+                      margin: 4px;
+                      width: 32px;
+                      height: 32px;
+                      cursor: pointer;
+                      vertical-align: middle;
+                      background-image: url(jquery-slider-master/img/share/share-icons.png);
+                  }
 
-            <!-- Example to add fixed static share buttons in slider BEGIN -->
-            <!-- Remove it if no need -->
-            <!-- Share Button Styles -->
-            <style>
-                .share-icon {
-                    display: inline-block;
-                    float: left;
-                    margin: 4px;
-                    width: 32px;
-                    height: 32px;
-                    cursor: pointer;
-                    vertical-align: middle;
-                    background-image: url(jquery-slider-master/img/share/share-icons.png);
-                }
+                  .share-facebook {
+                      background-position: 0px 0px;
+                  }
 
-                .share-facebook {
-                    background-position: 0px 0px;
-                }
+                      .share-facebook:hover {
+                          background-position: 0px -40px;
+                      }
 
-                    .share-facebook:hover {
-                        background-position: 0px -40px;
-                    }
+          .share-twitter {
+              background-position: -40px 0px;
+          }
 
-        .share-twitter {
-            background-position: -40px 0px;
-        }
+              .share-twitter:hover {
+                  background-position: -40px -40px;
+              }
 
-            .share-twitter:hover {
-                background-position: -40px -40px;
-            }
+          .share-pinterest {
+              background-position: -80px 0px;
+          }
 
-        .share-pinterest {
-            background-position: -80px 0px;
-        }
+              .share-pinterest:hover {
+                  background-position: -80px -40px;
+              }
 
-            .share-pinterest:hover {
-                background-position: -80px -40px;
-            }
+                  .share-linkedin {
+                      background-position: -240px 0px;
+                  }
 
-                .share-linkedin {
-                    background-position: -240px 0px;
-                }
-
-                    .share-linkedin:hover {
-                        background-position: -240px -40px;
-                    }
-
-
-                .share-googleplus {
-                    background-position: -120px 0px;
-                }
-
-                    .share-googleplus:hover {
-                        background-position: -120px -40px;
-                    }
+                      .share-linkedin:hover {
+                          background-position: -240px -40px;
+                      }
 
 
-        .share-stumbleupon {
-            background-position: -360px 0px;
-        }
+                  .share-googleplus {
+                      background-position: -120px 0px;
+                  }
 
-            .share-stumbleupon:hover {
-                background-position: -360px -40px;
-            }
+                      .share-googleplus:hover {
+                          background-position: -120px -40px;
+                      }
 
-                .share-email {
-                    background-position: -320px 0px;
-                }
 
-                    .share-email:hover {
-                        background-position: -320px -40px;
-                    }
-            </style>
+          .share-stumbleupon {
+              background-position: -360px 0px;
+          }
 
-            <!-- Example to add fixed static share buttons in slider END -->
+              .share-stumbleupon:hover {
+                  background-position: -360px -40px;
+              }
 
-            <!-- Example to add fixed static QR code in slider BEGIN -->
-            <!-- Remove it if no need -->
-            <!-- QR Code Style -->
-            <style>
-                @media only screen and (max-width: 980px) {
-                    .qr_code {
-                        display: none;
-                    }
-                }
-            </style>
-            <!--<img u="any" class="qr_code" src="jquery-slider-master/img/qr/jssor.com.png" style="position: absolute; width: 80px; height: 80px; bottom: 20px; right: 20px; opacity: .5; filter: alpha(opacity=50);" />-->
-            <!-- Example to add fixed static QR code in slider END -->
-        </div> 
- 
-        <!-- Bullet Navigator Skin Begin -->
-        <style>
-            /* jssor slider bullet navigator skin 03 css */
-            /*
-            .jssorb03 div           (normal)
-            .jssorb03 div:hover     (normal mouseover)
-            .jssorb03 .av           (active)
-            .jssorb03 .av:hover     (active mouseover)
-            .jssorb03 .dn           (mousedown)
-            */
-            .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av
-            {
-                background: url(jquery-slider-master/img/b03.png) no-repeat;
-                overflow:hidden;
+                  .share-email {
+                      background-position: -320px 0px;
+                  }
+
+                      .share-email:hover {
+                          background-position: -320px -40px;
+                      }
+              </style>
+
+              <!-- Example to add fixed static share buttons in slider END -->
+
+              <!-- Example to add fixed static QR code in slider BEGIN -->
+              <!-- Remove it if no need -->
+              <!-- QR Code Style -->
+              <style>
+                  @media only screen and (max-width: 980px) {
+                      .qr_code {
+                          display: none;
+                      }
+                  }
+              </style>
+              <!--<img u="any" class="qr_code" src="jquery-slider-master/img/qr/jssor.com.png" style="position: absolute; width: 80px; height: 80px; bottom: 20px; right: 20px; opacity: .5; filter: alpha(opacity=50);" />-->
+              <!-- Example to add fixed static QR code in slider END -->
+          </div> 
+   
+          <!-- Bullet Navigator Skin Begin -->
+          <style>
+              /* jssor slider bullet navigator skin 03 css */
+              /*
+              .jssorb03 div           (normal)
+              .jssorb03 div:hover     (normal mouseover)
+              .jssorb03 .av           (active)
+              .jssorb03 .av:hover     (active mouseover)
+              .jssorb03 .dn           (mousedown)
+              */
+              .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av
+              {
+                  background: url(jquery-slider-master/img/b03.png) no-repeat;
+                  overflow:hidden;
+                  cursor: pointer;
+              }
+              .jssorb03 div { background-position: -5px -4px; }
+              .jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
+              .jssorb03 .av { background-position: -65px -4px; }
+              .jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
+          </style>
+          <!-- bullet navigator container -->
+          <div u="navigator" class="jssorb03" style="position: absolute; bottom: 16px; left: 6px;">
+              <!-- bullet navigator item prototype -->
+              <div u="prototype" style="POSITION: absolute; WIDTH: 21px; HEIGHT: 21px; text-align:center; line-height:21px; color:White; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+          </div>
+          <!-- Bullet Navigator Skin End -->
+          
+          <!-- Arrow Navigator Skin Begin -->
+          <style>
+              /* jssor slider arrow navigator skin 20 css */
+              /*
+              .jssora20l              (normal)
+              .jssora20r              (normal)
+              .jssora20l:hover        (normal mouseover)
+              .jssora20r:hover        (normal mouseover)
+              .jssora20ldn            (mousedown)
+              .jssora20rdn            (mousedown)
+              */
+              .jssora20l, .jssora20r, .jssora20ldn, .jssora20rdn
+              {
+                position: absolute;
                 cursor: pointer;
-            }
-            .jssorb03 div { background-position: -5px -4px; }
-            .jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
-            .jssorb03 .av { background-position: -65px -4px; }
-            .jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
-        </style>
-        <!-- bullet navigator container -->
-        <div u="navigator" class="jssorb03" style="position: absolute; bottom: 16px; left: 6px;">
-            <!-- bullet navigator item prototype -->
-            <div u="prototype" style="POSITION: absolute; WIDTH: 21px; HEIGHT: 21px; text-align:center; line-height:21px; color:White; font-size:12px;"><NumberTemplate></NumberTemplate></div>
-        </div>
-        <!-- Bullet Navigator Skin End -->
-        
-        <!-- Arrow Navigator Skin Begin -->
-        <style>
-            /* jssor slider arrow navigator skin 20 css */
-            /*
-            .jssora20l              (normal)
-            .jssora20r              (normal)
-            .jssora20l:hover        (normal mouseover)
-            .jssora20r:hover        (normal mouseover)
-            .jssora20ldn            (mousedown)
-            .jssora20rdn            (mousedown)
-            */
-            .jssora20l, .jssora20r, .jssora20ldn, .jssora20rdn
-            {
-            	position: absolute;
-            	cursor: pointer;
-            	display: block;
-                background: url(jquery-slider-master/img/a20.png) no-repeat;
-                overflow:hidden;
-            }
-            .jssora20l { background-position: -3px -33px; }
-            .jssora20r { background-position: -63px -33px; }
-            .jssora20l:hover { background-position: -123px -33px; }
-            .jssora20r:hover { background-position: -183px -33px; }
-            .jssora20ldn { background-position: -243px -33px; }
-            .jssora20rdn { background-position: -303px -33px; }
-        </style>
-        <!-- Arrow Left -->
-        <span u="arrowleft" class="jssora20l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
-        </span>
-        <!-- Arrow Right -->
-        <span u="arrowright" class="jssora20r" style="width: 55px; height: 55px; top: 123px; right: 8px">
-        </span>
-        <!-- Arrow Navigator Skin End -->
-        <a style="display: none" href="http://www.jssor.com">javascript</a> 
-    </div> 
-    <!-- Jssor Slider End --> 
+                display: block;
+                  background: url(jquery-slider-master/img/a20.png) no-repeat;
+                  overflow:hidden;
+              }
+              .jssora20l { background-position: -3px -33px; }
+              .jssora20r { background-position: -63px -33px; }
+              .jssora20l:hover { background-position: -123px -33px; }
+              .jssora20r:hover { background-position: -183px -33px; }
+              .jssora20ldn { background-position: -243px -33px; }
+              .jssora20rdn { background-position: -303px -33px; }
+          </style>
+          <!-- Arrow Left -->
+          <span u="arrowleft" class="jssora20l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+          </span>
+          <!-- Arrow Right -->
+          <span u="arrowright" class="jssora20r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+          </span>
+          <!-- Arrow Navigator Skin End -->
+          <a style="display: none" href="http://www.jssor.com">javascript</a> 
+      </div> 
+      <!-- Jssor Slider End --> 
+  </div><!-- mainContent -->
 </body> 
 </html>
