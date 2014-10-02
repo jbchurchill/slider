@@ -21,7 +21,7 @@
       }
       div#nav
       {
-        font-size: 1.2em;
+        font-size: 1.1em;
       }
       div#footer
       {
@@ -63,7 +63,7 @@
         color: #0000ff;
         border-bottom: 2px solid #0000ff;
       }      
-      .captionOrange, .captionBlack
+      .captionOrange, .captionGreen, .captionYellow, .captionBlack
       {
           color: #fff;
           font-size: 20px;
@@ -75,6 +75,18 @@
       {
           background: #EB5100;
           background-color: rgba(235, 81, 0, 0.6);
+      }
+      .captionGreen
+      {
+          color: #000;
+          background: #39FF39;
+          background-color: rgba(57, 255, 57, 0.4)
+      }
+      .captionYellow
+      {
+          color: #000;
+          background: #FFFF66;
+          background-color: rgba(255, 255, 102, 0.6)
       }
       #gc_banner 
       {
@@ -294,6 +306,7 @@
         | <a href="http://gis.garrettcounty.org/arcgis/pz_map.php">Planning &amp; Zoning Map</a> | 
         <a href="http://gis.garrettcounty.org/arcgis/measure.php">Measurements</a> | 
         <a href="http://gis.garrettcounty.org/arcgis/FEMA_map.php">Flood Hazard Map</a> | 
+        <a href="http://gis.garrettcounty.org/arcgis/sensitive.php">Sensitive Areas Map</a> | 
         <a href="http://gis.garrettcounty.org/help.html">Help</a> | 
       </div><!-- nav -->
       <!-- Jssor Slider Begin -->
@@ -327,7 +340,7 @@
                   <img u="image" src="images/gc_carousel-01.jpg" alt="Planning and Zoning Map screenshot">
                   <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionOrange" style="position:absolute; left:295px; top: 84px; width:290px; height:28px;">
                       <img src="images/Arrow02.png">  Search for an Address
-                  </div>                
+                  </div>
                   <div u=caption t="CLIP|LR" du="100" class="captionOrange"  style="position:absolute; left:60px; top: 180px; width:600px; height:30px;"> 
                   Click to identify Address points, parcels, zoning, and other layers.
                   </div>
@@ -404,9 +417,18 @@
               </div>
               <div id="slide4">
                   <img u="image" src="images/gc_carousel-04.jpg" alt="Sensitive Areas Map">
-                  <div u=caption t="RTTS|T" d=-300 t2="B" class=captionOrange style="position:absolute; left:20px; top: 330px; width:400px; height:30px;"> 
-                  SENSITIVE AREAS MAP COMING SOON
+                  <div u=caption t="RTTS|T" d=-300 t2="B" class=captionOrange style="position:absolute; left:20px; top: 330px; width:370px; height:30px;"> 
+                  <a href="http://gis.garrettcounty.org/arcgis/sensitive.php">SENSITIVE AREAS MAP &#045; Click Here</a>
                   </div>
+                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionYellow" style="position:absolute; left:465px; top: 70px; width:190px; height:28px;">
+                      Growth Areas <img src="images/Arrow03.png">
+                  </div>
+                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionGreen" style="position:absolute; left:317px; top: 260px; width:230px; height:28px;">
+                      <img src="images/Arrow02.png"> Protected Species
+                  </div>
+                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionOrange" style="position:absolute; left:495px; top: 310px; width:280px; height:28px;">
+                      Sourcewater Protection Areas <img src="images/Arrow03.png">
+                  </div>                  
                   <!--
                   <div u=caption t="T|IB" t2="T" d=-300 class="captionOrange"  style="position:absolute; left:20px; top: 100px; width:130px; height:30px;"> 
                   All browsers
