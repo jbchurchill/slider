@@ -115,6 +115,35 @@
       {
           background: url(jquery-slider-master/img/browser-icons.png);
       }
+      
+      .slider1 div 
+      {
+          position: relative; margin: 0px; padding: 0px;
+      }
+      
+      /* jssor slider arrow navigator skin 20 css */
+      /*
+      .jssora20l              (normal)
+      .jssora20r              (normal)
+      .jssora20l:hover        (normal mouseover)
+      .jssora20r:hover        (normal mouseover)
+      .jssora20ldn            (mousedown)
+      .jssora20rdn            (mousedown)
+      */
+      .jssora20l, .jssora20r, .jssora20ldn, .jssora20rdn
+      {
+        position: absolute;
+        cursor: pointer;
+        display: block;
+          background: url(jquery-slider-master/img/a20.png) no-repeat;
+          overflow:hidden;
+      }
+      .jssora20l { background-position: -3px -33px; }
+      .jssora20r { background-position: -63px -33px; }
+      .jssora20l:hover { background-position: -123px -33px; }
+      .jssora20r:hover { background-position: -183px -33px; }
+      .jssora20ldn { background-position: -243px -33px; }
+      .jssora20rdn { background-position: -303px -33px; }      
     </style>
     <!-- it works the same with all jquery version from 1.x to 2.x -->
     <script type="text/javascript" src="jquery-slider-master/js/jquery-1.9.1.min.js"></script>
@@ -300,7 +329,7 @@
 <body>    
     <div id="mainContent">
       <div id="gc_banner" style="position: relative; align-content: center; text-align:center; margin-right: auto; margin-left: auto; margin-top: 20px; width: 900px; height:105px; float: center">
-        <h1>Garrett County Web Maps <img src="images\yourLOGO.gif" width="64" height="48" ></h1>
+        <h1>Garrett County Web Maps <img src="images/yourLOGO.gif" width="64" height="48" alt="Garrett County logo" ></h1>
       </div>
       <div id="nav">
         | <a href="http://gis.garrettcounty.org/arcgis/pz_map.php">Planning &amp; Zoning Map</a> | 
@@ -315,13 +344,13 @@
       <!-- // THIS NEXT DIV WAS w980px h380px -->
       <div id="slider1_container" style="position: relative; width: 900px;
           height: 400px; overflow: hidden; margin-left:auto; margin-right:auto; float:center;">
-          <style>
+          <!--<style>
               /* this line can be removed, but it really helps in case of css conflicts in your page */
               .slider1 div { position: relative; margin: 0px; padding: 0px; }
-          </style>
+          </style> -->
    
           <!-- Loading Screen --> 
-          <div u="loading" style="position: absolute; top: 0px; left: 0px;">
+          <div style="position: absolute; top: 0px; left: 0px;" data-u="loading">
               <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
 
                   background-color: #000; top: 0px; left: 0px;width: 100%; height:100%;"> 
@@ -334,116 +363,120 @@
    
           <!-- Slides Container --> 
           <!-- THIS NEXT DIV MODIFIED BY ME; WAS w980px and h380px -->
-          <div id="slides" u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 900px; height: 400px;
+          <div id="slides" data-u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 900px; height: 400px;
               overflow: hidden;">
               <div id="slide1">
-                  <!--<img u="image" src="jquery-slider-master/img/home/01.jpg" />-->
-                  <img u="image" src="images/gc_carousel-01.jpg" alt="Planning and Zoning Map screenshot">
-                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionOrange" style="position:absolute; left:295px; top: 84px; width:290px; height:28px;">
-                      <img src="images/Arrow02.png">  Search for an Address
+                  <!--<img data-u="image" src="jquery-slider-master/img/home/01.jpg" />-->
+                  <img src="images/gc_carousel-01.jpg" alt="Planning and Zoning Map screenshot" data-u="image">
+                  <div class="captionOrange" style="position:absolute; left:295px; top: 84px; width:290px; height:28px;" data-t="T|IE*IE" data-d=-1600 data-du=3800 data-t2="B" data-u=caption>
+                      <img src="images/Arrow02.png" alt="arrow graphic 2">  Search for an Address
                   </div>
-                  <div u=caption t="CLIP|LR" du="100" class="captionOrange"  style="position:absolute; left:60px; top: 180px; width:600px; height:30px;"> 
+                  <div class="captionOrange"  style="position:absolute; left:60px; top: 180px; width:600px; height:30px;" data-u=caption data-t="CLIP|LR" data-du="100"> 
                   Click to identify Address points, parcels, zoning, and other layers.
                   </div>
 
-                  <!--<div u="caption" t="ZMF|10" t2="B" d=-1300 style="position:absolute;left:420px;top:280px;width:90px;height:40px;font-size:36px;color:#fff;line-height:40px;">390+</div>-->
+                  <!--<div data-u="caption" data-t="ZMF|10" data-t2="B" data-d=-1300 style="position:absolute;left:420px;top:280px;width:90px;height:40px;font-size:36px;color:#fff;line-height:40px;">390+</div>-->
                   
-                  <a class="captionOrange" u="caption" t="CLIP|L" d=-300 href="http://gis.garrettcounty.org/arcgis/pz_map.php" style="position:absolute;left:260px;top:270px;width:560px;height:40px;font-size:26px;color:#fff;line-height:40px; text-decoration: underline;">Click Here For the Planning and Zoning Map</a>
+                  <a class="captionOrange" href="http://gis.garrettcounty.org/arcgis/pz_map.php" style="position:absolute;left:260px;top:270px;width:560px;height:40px;font-size:26px;color:#fff;line-height:40px; text-decoration: underline;" data-u="caption" data-t="CLIP|L" data-d=-300>Click Here For the Planning and Zoning Map</a>
               </div>
               <div id="slide2"> 
-                  <img u="image" src="images/gc_carousel-02.jpg" alt="FEMA Map screenshot">
+                  <img src="images/gc_carousel-02.jpg" alt="FEMA Map screenshot" data-u="image">
                   <a class="captionOrange" href="http://gis.garrettcounty.org/arcgis/FEMA_map.php" style="position: absolute; text-decoration: underline; top: 240px; left: 500px; width: 300px; height: 30px;">Click Here for the FEMA Map</a>
-                  <div u=caption t="CLIP|LR" t2="B" du="2000" class="captionOrange"  style="position:absolute; left:20px; top: 300px; width:790px; height:30px;">
+                  <div class="captionOrange"  style="position:absolute; left:20px; top: 300px; width:790px; height:30px;" data-u=caption data-t="CLIP|LR" 
+                  data-t2="B" data-du="2000">
                   Use the Flood Hazard Map to determine inclusion in the 100&#045;year Flood Hazard Zone.
                   </div>
-                  <!--<div u="caption" t="FADE" t2="B" d=-450 class=captionBlack style="position: absolute; left:700px;top:120px;width:200px;height:90px;">
+                  <!--<div data-u="caption" data-t="FADE" data-t2="B" data-d=-450 class=captionBlack style="position: absolute; left:700px;top:120px;width:200px;height:90px;">
                           No-JQuery<br />
                           Independent<br />
                           Javascript Code
                   </div>-->
-                  <!--<div u="caption" t="T|IB" t2="R" d=-600 class=captionOrange style="position: absolute; top: 90px; left: 720px; width: 160px;
+                  <!--<div data-u="caption" data-t="T|IB" data-t2="R" data-d=-600 class=captionOrange style="position: absolute; top: 90px; left: 720px; width: 160px;
                       height: 90px;  line-height: 90px;">
                       Compress
                   </div>-->
-                  <div u="caption" t="MCLIP|T" t2="T" d=-450 style="position:absolute;left:725px;top:80px;width:200px;height:30px;font-size:18px;color:#ff6600;line-height:30px;text-align:left;">Click to Identify ...</div>
-                  <div u="caption" t="MCLIP|R" d=-300 style="position:absolute;left:725px;top:110px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;">Addresses</div>
-                  <div u="caption" t="MCLIP|R" d=-300 style="position:absolute;left:725px;top:140px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;">Parcels</div>
-                  <div u="caption" t="MCLIP|R" d=-300 style="position:absolute;left:725px;top:170px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;">Flood Hazard Areas</div>
+                  <div style="position:absolute;left:725px;top:80px;width:200px;height:30px;font-size:18px;color:#ff6600;line-height:30px;text-align:left;" data-u="caption" data-t="MCLIP|T" data-t2="T" data-d=-450>Click to Identify ...</div>
+                  <div style="position:absolute;left:725px;top:110px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;" data-u="caption" data-t="MCLIP|R" data-d=-300>Addresses</div>
+                  <div style="position:absolute;left:725px;top:140px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;" data-u="caption" data-t="MCLIP|R" data-d=-300>Parcels</div>
+                  <div style="position:absolute;left:725px;top:170px;width:350px;height:30px;font-size:18px;color:#ff6600;line-height:30px;"  data-u="caption" data-t="MCLIP|R" data-d=-300>Flood Hazard Areas</div>
               </div>
               <div> 
-                  <img u="image" src="images/gc_carousel-03.jpg" alt="Measurement Map screenshot">
+                  <img data-u="image" src="images/gc_carousel-03.jpg" alt="Measurement Map screenshot">
                   <a class="captionOrange" href="http://gis.garrettcounty.org/arcgis/measure.php" style="position: absolute; top: 325px; right: 30px; width: 400px; text-decoration: underline;">Click Here for the Measurement Map</a>
                   <!--
-                  <div u=caption t="T" t2=NO style="position: absolute; left: 20px; top:30px; width:600px; height:90px; color: #fff; line-height: 30px; text-align: center;"> 
+                  <div data-u=caption data-t="T" data-t2=NO style="position: absolute; left: 20px; top:30px; width:600px; height:90px; color: #fff; line-height: 30px; text-align: center;"> 
                       Jssor Slider is touch swipe image slideshow with 360+ javascript slideshow effects.<br />
                       When touch Jssor Slider,<br />
                       it will freeze and then move to the direction that finger swipes to.
                   </div>
-                  <div u=caption t="L" d=-750 class="captionOrange"  style="position:absolute; left:20px; top: 300px; width:130px; height:30px;"> 
+                  <div data-u=caption data-t="L" data-d=-750 class="captionOrange"  style="position:absolute; left:20px; top: 300px; width:130px; height:30px;"> 
                   Jssor slider
                   </div>
-                  <div u=caption t="CLIP|L" t2=B d=-450 class="captionBlack"  style="position:absolute; left:160px; top: 300px; width:30px; height:30px;"> 
+                  <div data-u=caption data-t="CLIP|L" data-t2=B data-d=-450 class="captionBlack"  style="position:absolute; left:160px; top: 300px; width:30px; height:30px;"> 
                   is
                   </div>
-                  <div u=caption t="DDG|TR" t2="TORTUOUS|VB" d=-750 class="captionOrange"  style="position:absolute; left:200px; top: 300px; width:300px; height:30px;"> 
+                  <div data-u=caption data-t="DDG|TR" data-t2="TORTUOUS|VB" data-d=-750 class="captionOrange"  style="position:absolute; left:200px; top: 300px; width:300px; height:30px;"> 
                   most scalable photo slideshow
                   </div>
-                  <div u=caption t="RTT|10" d=-450 class="captionBlack"  style="position:absolute; left:430px; top: 240px; width:30px; height:30px;"> 
+                  <div data-u=caption data-t="RTT|10" data-d=-450 class="captionBlack"  style="position:absolute; left:430px; top: 240px; width:30px; height:30px;"> 
                   for
                   </div>
                   -->
-                  <div u=caption t="T" d=-450 class="captionOrange"  style="position:absolute; left:359px; top: 52px; width:80px; height:30px;">
+                  <div class="captionOrange"  style="position:absolute; left:359px; top: 52px; width:80px; height:30px;" data-u=caption data-t="T" data-d=-450>
                     click
                   </div>
-                  <div u=caption t="TORTUOUS|VB" d=-750 class="captionOrange"  style="position:absolute; left:465px; top: 220px; width:80px; height:30px;"> 
+                  <div class="captionOrange"  style="position:absolute; left:465px; top: 220px; width:80px; height:30px;" data-u=caption data-t="TORTUOUS|VB" 
+                  data-d=-750> 
                     click
                   </div>
-                  <div u=caption t="FLTTR|R" t2="B" d=-600 class="captionOrange"  style="position:absolute; left:300px; top: 320px; width:80px; height:30px;"> 
+                  <div class="captionOrange"  style="position:absolute; left:300px; top: 320px; width:80px; height:30px;" data-u=caption data-t="FLTTR|R" 
+                  data-t2="B" data-d=-600> 
                     click
                   </div>
-                  <div u=caption t="ATTACK|BR" d=-600 class="captionOrange"  style="position:absolute; left:120px; top: 232px; width:80px; height:30px;"> 
+                  <div class="captionOrange" style="position:absolute; left:120px; top: 232px; width:80px; height:30px;" data-u=caption data-t="ATTACK|BR" 
+                  data-d=-600>
                     click
                   </div>
-                  <div u=caption t="T" d=-450 class="captionOrange"  style="position:absolute; left:153px; top: 71px; width:145px; height:30px;">
+                  <div class="captionOrange"  style="position:absolute; left:153px; top: 71px; width:145px; height:30px;" data-u=caption data-t="T" data-d=-450>
                     Double&#045;click
                   </div>
-                  <div u="caption" t="FLTTRWN|LT" d=-900 style="position:absolute;left:500px;top:60px;width:130px;height:30px;font-size:22px;color:#ff6600;line-height:30px;">Measure Area</div>
-                  <div u="caption" t="FLTTRWN|LT" d=-900 style="position:absolute;left:500px;top:120px;width:130px;height:30px;font-size:22px;color:#00ff00;line-height:30px;">Length</div>
-                  <div u="caption" t="FLTTRWN|LT" d=-900 style="position:absolute;left:500px;top:145px;width:130px;height:30px;font-size:22px;color:#0000ff;line-height:30px;">or Lat Long<img src="images/LatLongPin.png"></div>
-                  <div u="caption" t="FLTTRWN|LT" d=-900 style="position:absolute;left:667px;top:95px;width:130px;height:30px;font-size:22px;"><span class="red_line" style="border-bottom: 2px solid red;">__</span>&nbsp;&nbsp;&nbsp;<span class="green_line">__</span>&nbsp;&nbsp;<span class="blue_line">__</span></div>                  
+                  <div style="position:absolute;left:500px;top:60px;width:130px;height:30px;font-size:22px;color:#ff6600;line-height:30px;" data-u="caption" data-t="FLTTRWN|LT" data-d=-900>Measure Area</div>
+                  <div style="position:absolute;left:500px;top:120px;width:130px;height:30px;font-size:22px;color:#00ff00;line-height:30px;" data-u="caption" data-t="FLTTRWN|LT" data-d=-900>Length</div>
+                  <div style="position:absolute;left:500px;top:145px;width:130px;height:30px;font-size:22px;color:#0000ff;line-height:30px;" data-u="caption" data-t="FLTTRWN|LT" data-d=-900>or Lat Long<img src="images/LatLongPin.png" alt="Lat Long graphic"></div>
+                  <div style="position:absolute;left:667px;top:95px;width:130px;height:30px;font-size:22px;" data-u="caption" data-t="FLTTRWN|LT" data-d=-900><span class="red_line" style="border-bottom: 2px solid red;">__</span>&nbsp;&nbsp;&nbsp;<span class="green_line">__</span>&nbsp;&nbsp;<span class="blue_line">__</span></div>                  
                   
-                  <!--<div u="caption" t="RTTS|R" d=-900 style="position:absolute;left:760px;top:120px;width:130px;height:30px;font-size:28px;color:#fff;line-height:30px;">web page</div>
-                  <div u="caption" t="R|IB" t2=R d=-900 style="position:absolute;left:860px;top:250px;width:60px;height:30px;font-size:28px;color:#fff;line-height:30px;">text</div>
+                  <!--<div data-u="caption" data-t="RTTS|R" data-d=-900 style="position:absolute;left:760px;top:120px;width:130px;height:30px;font-size:28px;color:#fff;line-height:30px;">web page</div>
+                  <div data-u="caption" data-t="R|IB" data-t2=R data-d=-900 style="position:absolute;left:860px;top:250px;width:60px;height:30px;font-size:28px;color:#fff;line-height:30px;">text</div>
                   -->
               </div>
               <div id="slide4">
-                  <img u="image" src="images/gc_carousel-04.jpg" alt="Sensitive Areas Map">
-                  <div u=caption t="RTTS|T" d=-300 t2="B" class=captionOrange style="position:absolute; left:20px; top: 330px; width:370px; height:30px;"> 
+                  <img data-u="image" src="images/gc_carousel-04.jpg" alt="Sensitive Areas Map">
+                  <div class=captionOrange style="position:absolute; left:20px; top: 330px; width:370px; height:30px;" data-u=caption data-t="RTTS|T" data-d=-300 data-t2="B"> 
                   <a href="http://gis.garrettcounty.org/arcgis/sensitive.php">SENSITIVE AREAS MAP &#045; Click Here</a>
                   </div>
-                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionYellow" style="position:absolute; left:465px; top: 70px; width:190px; height:28px;">
-                      Growth Areas <img src="images/Arrow03.png">
+                  <div data-u=caption data-t="T|IE*IE" data-d=-1600 data-du=3800 data-t2="B" class="captionYellow" style="position:absolute; left:465px; top: 70px; width:190px; height:28px;">
+                      Growth Areas <img src="images/Arrow03.png" alt="arrow graphic 3">
                   </div>
-                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionGreen" style="position:absolute; left:317px; top: 260px; width:230px; height:28px;">
-                      <img src="images/Arrow02.png"> Protected Species
+                  <div data-u=caption data-t="T|IE*IE" data-d=-1600 data-du=3800 data-t2="B" class="captionGreen" style="position:absolute; left:317px; top: 260px; width:230px; height:28px;">
+                      <img src="images/Arrow02.png" alt="arrow graphic 2"> Protected Species
                   </div>
-                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionOrange" style="position:absolute; left:495px; top: 310px; width:280px; height:28px;">
-                      Sourcewater Protection Areas <img src="images/Arrow03.png">
-                  </div>                  
+                  <div data-u=caption data-t="T|IE*IE" data-d=-1600 data-du=3800 data-t2="B" class="captionOrange" style="position:absolute; left:495px; top: 310px; width:280px; height:28px;">
+                      Sourcewater Protection Areas <img src="images/Arrow03.png" alt="arrow graphic 3">
+                  </div>
                   <!--
-                  <div u=caption t="T|IB" t2="T" d=-300 class="captionOrange"  style="position:absolute; left:20px; top: 100px; width:130px; height:30px;"> 
+                  <div data-u=caption data-t="T|IB" data-t2="T" data-d=-300 class="captionOrange"  style="position:absolute; left:20px; top: 100px; width:130px; height:30px;"> 
                   All browsers
                   </div>
-                  <div u=caption t="T|IB" t2=L d=-900 class="captionBlack"  style="position:absolute; left:60px; top: 170px; width:100px; height:30px;"> 
+                  <div data-u=caption data-t="T|IB" data-t2=L data-d=-900 class="captionBlack"  style="position:absolute; left:60px; top: 170px; width:100px; height:30px;"> 
                   supported
                   </div>
                   
-                  <div u="caption" t="WV|B" t2="T" d=-600 class=bricon style="position:absolute; top:50px; left: 220px; width:30px; height:30px; background-position: 0px 0px;"></div>
-                  <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:100px; left: 220px; width:30px; height:30px; background-position: -30px 0px;"></div>
-                  <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:150px; left: 220px; width:30px; height:30px; background-position: -60px 0px;"></div>
-                  <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:200px; left: 220px; width:30px; height:30px; background-position: -90px 0px;"></div>
-                  <div u="caption" t="WV|B" t2="T" d="-1100" class=bricon style="position:absolute; top:250px; left: 220px; width:30px; height:30px; background-position: -120px 0px;"></div>
-                  <div u="caption" t="LISTH|R" t2="CLIP|TB" d=-600 class=captionOrange style="position: absolute; top: 40px; left: 280px; width: 180px;
+                  <div data-u="caption" data-t="WV|B" data-t2="T" data-d=-600 class=bricon style="position:absolute; top:50px; left: 220px; width:30px; height:30px; background-position: 0px 0px;"></div>
+                  <div data-u="caption" data-t="WV|B" data-t2="T" data-d="-1100" class=bricon style="position:absolute; top:100px; left: 220px; width:30px; height:30px; background-position: -30px 0px;"></div>
+                  <div data-u="caption" data-t="WV|B" data-t2="T" data-d="-1100" class=bricon style="position:absolute; top:150px; left: 220px; width:30px; height:30px; background-position: -60px 0px;"></div>
+                  <div data-u="caption" data-t="WV|B" data-t2="T" data-d="-1100" class=bricon style="position:absolute; top:200px; left: 220px; width:30px; height:30px; background-position: -90px 0px;"></div>
+                  <div data-u="caption" data-t="WV|B" data-t2="T" data-d="-1100" class=bricon style="position:absolute; top:250px; left: 220px; width:30px; height:30px; background-position: -120px 0px;"></div>
+                  <div data-u="caption" data-t="LISTH|R" data-t2="CLIP|TB" data-d=-600 class=captionOrange style="position: absolute; top: 40px; left: 280px; width: 180px;
                       height: 250px; text-align: left; line-height: 50px;">
                           &nbsp; Chrome&nbsp; &nbsp; &nbsp; 3+<br />
                           &nbsp; Firerfox&nbsp; &nbsp; &nbsp; 2+<br />
@@ -451,48 +484,48 @@
                           &nbsp; Safari&nbsp; &nbsp; &nbsp; &nbsp; 3.1+<br />
                           &nbsp; Opera&nbsp; &nbsp; &nbsp; &nbsp;10+
                   </div>
-                  <div u=caption t="TR" t2="T" d=-900 class="captionOrange"  style="position:absolute; left:700px; top: 40px; width:130px; height:30px;"> 
+                  <div data-u=caption data-t="TR" data-t2="T" data-d=-900 class="captionOrange"  style="position:absolute; left:700px; top: 40px; width:130px; height:30px;"> 
                   All devices
                   </div>
-                  <div u=caption t="R" t2=R d=-900 class="captionBlack"  style="position:absolute; left:780px; top: 55px; width:100px; height:30px;"> 
+                  <div data-u=caption data-t="R" data-t2=R data-d=-900 class="captionBlack"  style="position:absolute; left:780px; top: 55px; width:100px; height:30px;"> 
                   supported
                   </div>
                   -->
                   <!--
-                  <div u="caption" t="T|IB" d=-900 style="position:absolute;left:525px;top:90px;width:220px;height:30px;font-size:28px;color:#fff;line-height:30px;">Windows Phone</div>
-                  <div u="caption" t="T|IB" t2="ZMF|10" d=-900 style="position:absolute;left:560px;top:160px;width:120px;height:30px;font-size:28px;color:#fff;line-height:30px;">Android</div>
-                  <div u="caption" t="T|IB" t2=R d=-900 style="position:absolute;left:760px;top:140px;width:60px;height:30px;font-size:28px;color:#fff;line-height:30px;">iOS</div>
-                  <img u="caption" t="T|IB" t2=B d=-900 src="jquery-slider-master/img/home/moc-iphone.png" style="position:absolute;left:600px;top:230px;width:120px;height:80px;" />
-                  <img u="caption" t="RTTL|BR" d=-450 src="jquery-slider-master/img/home/moc-ipad.png" style="position:absolute;left:750px;top:220px;width:77px;height:100px;" />
+                  <div data-u="caption" data-t="T|IB" data-d=-900 style="position:absolute;left:525px;top:90px;width:220px;height:30px;font-size:28px;color:#fff;line-height:30px;">Windows Phone</div>
+                  <div data-u="caption" data-t="T|IB" data-t2="ZMF|10" data-d=-900 style="position:absolute;left:560px;top:160px;width:120px;height:30px;font-size:28px;color:#fff;line-height:30px;">Android</div>
+                  <div data-u="caption" data-t="T|IB" data-t2=R data-d=-900 style="position:absolute;left:760px;top:140px;width:60px;height:30px;font-size:28px;color:#fff;line-height:30px;">iOS</div>
+                  <img data-u="caption" data-t="T|IB" data-t2=B data-d=-900 src="jquery-slider-master/img/home/moc-iphone.png" style="position:absolute;left:600px;top:230px;width:120px;height:80px;" />
+                  <img data-u="caption" data-t="RTTL|BR" data-d=-450 src="jquery-slider-master/img/home/moc-ipad.png" style="position:absolute;left:750px;top:220px;width:77px;height:100px;" />
                   -->
 
               </div><!-- slide 4 -->
               
               <div id="slide5">
-                  <img u="image" src="images/gc_carousel-05.jpg" alt="Printable Map">
-                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionYellow" style="position:absolute; left:500px; top: 85px; width:200px; height:56px;">
-                      Choose Layers and Custom Title <img src="images/Arrow03.png">
+                  <img data-u="image" src="images/gc_carousel-05.jpg" alt="Printable Map">
+                  <div data-u=caption data-t="T|IE*IE" data-d=-1600 data-du=3800 data-t2="B" class="captionYellow" style="position:absolute; left:500px; top: 85px; width:200px; height:56px;">
+                      Choose Layers and Custom Title <img src="images/Arrow03.png" alt="arrow graphic 3">
                   </div>
-                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionGreen" style="position:absolute; left:95px; top: 170px; width:320px; height:28px;">
+                  <div data-u=caption data-t="T|IE*IE" data-d=-1600 data-du=3800 data-t2="B" class="captionGreen" style="position:absolute; left:95px; top: 170px; width:320px; height:28px;">
                       <!--<img src="images/Arrow02.png">--> Add Graphics and Labels...
                   </div>
-                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionOrange" style="position:absolute; left:500px; top: 140px; width:230px; height:28px;">
+                  <div data-u=caption data-t="T|IE*IE" data-d=-1600 data-du=3800 data-t2="B" class="captionOrange" style="position:absolute; left:500px; top: 140px; width:230px; height:28px;">
                     Click Prep Map Button <!--<img src="images/Arrow03.png">-->
                   </div>
-                  <div u=caption t="T|IE*IE" d=-1600 du=3800 t2="B" class="captionOrange" style="position:absolute; left:475px; top: 170px; width:260px; height:60px;">
-                    Print Button turns into a link saying &#8220;Printout&#8221; &nbsp;&nbsp;&nbsp; <img src="images/Arrow03.png">
+                  <div data-u=caption data-t="T|IE*IE" data-d=-1600 data-du=3800 data-t2="B" class="captionOrange" style="position:absolute; left:475px; top: 170px; width:260px; height:60px;">
+                    Print Button turns into a link saying &#8220;Printout&#8221; &nbsp;&nbsp;&nbsp; <img src="images/Arrow03.png" alt="arrow graphic 3">
                   </div>                  
-                  <div u=caption t="TORTUOUS|VB" d=-750 class="captionOrange"  style="position:absolute; left:440px; top:290px; width:280px; height:100px;"> 
+                  <div data-u=caption data-t="TORTUOUS|VB" data-d=-750 class="captionOrange"  style="position:absolute; left:440px; top:290px; width:280px; height:100px;"> 
                     Options for Portrait or Landscape and PDF or JPG Format.
                   </div>
-                  <div u=caption t="RTTS|T" d=-300 t2="B" class=captionOrange style="position:absolute; left:20px; top: 340px; width:380px; height:30px;"> 
+                  <div data-u=caption data-t="RTTS|T" data-d=-300 data-t2="B" class=captionOrange style="position:absolute; left:20px; top: 340px; width:380px; height:30px;"> 
                     <a href="http://gis.garrettcounty.org/arcgis/printable.php">Click here for the &#8220;Printable MAP&#8221;</a>
                   </div>
               </div><!-- slide5 -->
             </div><!-- end of slide container ? -->
           <!-- Arrow Navigator Skin Begin -->
-          
-          <style>
+          <!--
+          <style scoped="true">
               /* jssor slider arrow navigator skin 20 css */
               /*
               .jssora20l              (normal)
@@ -517,17 +550,17 @@
               .jssora20ldn { background-position: -243px -33px; }
               .jssora20rdn { background-position: -303px -33px; }
           </style>
+          -->
           <!-- Arrow Left -->
-          <span u="arrowleft" class="jssora20l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+          <span data-u="arrowleft" class="jssora20l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
           </span>
           <!-- Arrow Right -->
-          <span u="arrowright" class="jssora20r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+          <span data-u="arrowright" class="jssora20r" style="width: 55px; height: 55px; top: 123px; right: 8px">
           </span>
           <!-- Arrow Navigator Skin End -->
           <a style="display: none" href="http://www.jssor.com">javascript</a> 
       </div> 
       <!-- Jssor Slider End --> 
-  </div><!-- UNKNOWN??? -->
   </div><!-- mainContent -->
   <div id="footer">
     | <a href="http://www.garrettcounty.org">Garrett County Home</a> | 
